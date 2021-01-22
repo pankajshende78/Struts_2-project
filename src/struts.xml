@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+	<package name="default" extends="struts-default">
+
+
+		<action name="newaccount" class="p1.loginduo" method="register">
+			<result name="success">index.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="mainpage" class="p1.loginduo"
+			method="checkvalidation">
+			<result name="admin">admin.jsp</result>
+			<result name="user">user.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+
+		<action name="newcandidate" class="p2.newcandidate"
+			method="register">
+			<result name="success">admin.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="voteregister" class="p2.newcandidate"
+			method="registervote">
+			<result name="success">admin.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="checkvoteid" class="p2.newcandidate"
+			method="checkvoteid">
+			<result name="success">votingpage.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="finalvote" class="p2.newcandidate"
+			method="storevote">
+			<result name="success">user.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+
+
+
+	</package>
+
+
+</struts>
